@@ -1,4 +1,6 @@
-# React + Vite + ThreeJS - Portfolio
+# React + Vite + ThreeJS - 3D Portfolio
+
+![screenshot](3D_Portfolio_preview.gif)
 
 ## Run Locally
 
