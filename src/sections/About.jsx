@@ -59,6 +59,7 @@ const About = () => {
                   globeMethods.current?.pointOfView({
                     lat: -34.76,
                     lng: -57.27,
+                    altitude: 1.4,
                   })
                 }
                 height={326}
