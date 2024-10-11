@@ -12,6 +12,10 @@ const About = () => {
     setTimeout(() => setHasCopied(false), 2000)
   }
 
+  const handleNavigate = () => {
+    window.location.href = '#contact'
+  }
+
   return (
     <section className='c-space my-20' id='about'>
       <div className='grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full'>
@@ -87,7 +91,12 @@ const About = () => {
               <p className='grid-subtext'>
                 I&apos;m based in Buenos Aires, with remote work available.
               </p>
-              <Button name='Contact Me' isBeam containerClass='w-full mt-10' />
+              <Button
+                name='Contact Me'
+                isBeam
+                containerClass='w-full mt-10'
+                onClick={handleNavigate}
+              />
             </div>
           </div>
         </div>
