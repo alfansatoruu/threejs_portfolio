@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import { navLinks } from '../constants'
 
-const NavItems = () => {
+const NavItems = ({ onMenuClick = null }) => {
   return (
     <ul className='nav-ul'>
       {navLinks.map(({ id, name, href }) => (
         <li key={id} className='nav-li'>
-          <a href={href} className='nav-li_a'>
+          <a
+            href={href}
+            className='nav-li_a'
+            onClick={onMenuClick && onMenuClick}
+          >
             {name}
           </a>
         </li>
@@ -53,7 +57,7 @@ const Navbar = () => {
 
       <div className={`nav-sidebar ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
         <nav className='p-5 '>
-          <NavItems />
+          <NavItems onMenuClick={() => setIsOpen(false)} />
         </nav>
       </div>
     </header>
