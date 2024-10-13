@@ -8,27 +8,41 @@ const Footer = () => {
       </div>
 
       <div className='flex gap-3'>
-        <div className='social-icon'>
-          <img
-            src='assets/github.svg'
-            alt='github icon'
-            className='w-1/2 h-1/2'
-          />
-        </div>
-        <div className='social-icon'>
-          <img
-            src='assets/twitter.svg'
-            alt='twitter icon'
-            className='w-1/2 h-1/2'
-          />
-        </div>
-        <div className='social-icon'>
-          <img
-            src='assets/instagram.svg'
-            alt='instagram icon'
-            className='w-1/2 h-1/2'
-          />
-        </div>
+        <a href='https://github.com/jonatandb' target='_blank' rel='noreferrer'>
+          <div className='social-icon'>
+            <img
+              src='assets/github.svg'
+              alt='github icon'
+              className='w-1/2 h-1/2'
+            />
+          </div>
+        </a>
+        <a
+          href='https://twitter.com/jonatandb'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <div className='social-icon'>
+            <img
+              src='assets/twitter.svg'
+              alt='twitter icon'
+              className='w-1/2 h-1/2'
+            />
+          </div>
+        </a>
+        <a
+          href='https://www.linkedin.com/in/jonatandb/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <div className='social-icon'>
+            <img
+              src='assets/linkedin.svg'
+              alt='linkedin icon'
+              className='w-1/2 h-1/2'
+            />
+          </div>
+        </a>
       </div>
 
       <p className='text-white-500'>
