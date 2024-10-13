@@ -53,7 +53,7 @@ Visit:
 - [Sketchfab](https://sketchfab.com/3d-models/hacker-room-stylized-a0cfe6edf2dd494c8a95addf6bb13a10) – 🚗 3D Models.
 - [GSAP](https://gsap.com/) – A wildly robust JavaScript animation library built for professionals.
 - [React-globe.gl](https://github.com/vasturiano/react-globe.gl) – React component for Globe Data Visualization using ThreeJS/WebGL.
-
+- [EmailJS](https://www.emailjs.com/) – Send email directly from your code – no server side code required.
 ---
 
 
