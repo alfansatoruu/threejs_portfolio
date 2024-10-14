@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@emailjs/browser':
-        specifier: ^4.4.1
+        specifier: 4.4.1
         version: 4.4.1
       '@gsap/react':
         specifier: 2.1.1
@@ -27,7 +27,7 @@ importers:
         specifier: 0.9.35
         version: 0.9.35(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       maath:
-        specifier: ^0.10.8
+        specifier: 0.10.8
         version: 0.10.8(@types/three@0.168.0)(three@0.167.1)
       react:
         specifier: 18.3.1
@@ -36,7 +36,7 @@ importers:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
       react-globe.gl:
-        specifier: ^2.27.2
+        specifier: 2.27.2
         version: 2.27.2(react@18.3.1)
       react-responsive:
         specifier: 10.0.0
@@ -44,6 +44,9 @@ importers:
       three:
         specifier: 0.167.1
         version: 0.167.1
+      three-stdlib:
+        specifier: 2.33.0
+        version: 2.33.0(three@0.167.1)
     devDependencies:
       '@eslint/js':
         specifier: 9.11.1
