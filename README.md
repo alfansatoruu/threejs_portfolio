@@ -9,7 +9,11 @@
 
 ## Preview
 
-![screenshot](3D_Portfolio_preview.gif)
+[![screenshot](3D_Portfolio_preview.gif)](https://jonatandb.dev.ar/threejs_portfolio/)
+
+
+## Online version
+[https://jonatandb.dev.ar/threejs_portfolio/](https://jonatandb.dev.ar/threejs_portfolio/)
 
 ---
 ## Run Locally
@@ -56,7 +60,7 @@ Visit:
 - [EmailJS](https://www.emailjs.com/) – Send email directly from your code – no server side code required.
 - [\<model-viewer>](https://modelviewer.dev/) – Easily display interactive 3D models on the web & in AR.
 - [glTF Viewer](https://gltf-viewer.donmccurdy.com/)
-
+- [RealFaviconGenerator](https://realfavicongenerator.net/) – Favicon generator. For real.
 ---
 
 
