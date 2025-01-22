@@ -1,9 +1,8 @@
 # React + Vite + ThreeJS - 3D Portfolio
 
-
 ## Tech Stack
 
- - React, Vite, TailwindCSS, ThreeJS, GSAP
+- React, Vite, TailwindCSS, ThreeJS, GSAP
 
 ---
 
@@ -11,11 +10,12 @@
 
 [![screenshot](3D_Portfolio_preview.gif)](https://jonatandb.dev.ar/threejs_portfolio/)
 
-
 ## Online version
+
 [https://jonatandb.dev.ar/threejs_portfolio/](https://jonatandb.dev.ar/threejs_portfolio/)
 
 ---
+
 ## Run Locally
 
 Clone the project
@@ -35,7 +35,8 @@ Install dependencies
 ```bash
   pnpm install
 ```
-  - You can also use npm or yarn. But stay consistent to avoid problems.
+
+- You can also use npm or yarn. But stay consistent to avoid problems.
 
 Start the server
 
@@ -44,10 +45,11 @@ Start the server
 ```
 
 Visit:
+
 - http://localhost:5173
 
-
 ---
+
 ## Production build for Github Pages
 
 Build the project:
@@ -56,17 +58,10 @@ Build the project:
   pnpm build
 ```
 
-Update paths to resources to include project name:
-
-  - Open "docs\assets\index-[hashed part].js"
-  - Search for and replace this paths:
-    - "/assets/" -> "/threejs_portfolio/assets/"
-    - "/models/" -> "/threejs_portfolio/models/"
-    - "/textures/" -> "/threejs_portfolio/textures/"
-
 ---
 
 ## Useful websites
+
 - [Three.js](https://threejs.org/) – JavaScript 3D Library.
 - [GLTF convertor](https://gltf.pmnd.rs/) – 🎮 Turns GLTFs into JSX components.
 - [Sketchfab](https://sketchfab.com/3d-models/hacker-room-stylized-a0cfe6edf2dd494c8a95addf6bb13a10) – 🚗 3D Models.
@@ -76,8 +71,8 @@ Update paths to resources to include project name:
 - [\<model-viewer>](https://modelviewer.dev/) – Easily display interactive 3D models on the web & in AR.
 - [glTF Viewer](https://gltf-viewer.donmccurdy.com/)
 - [RealFaviconGenerator](https://realfavicongenerator.net/) – Favicon generator. For real.
----
 
+---
 
 ## Author
 
