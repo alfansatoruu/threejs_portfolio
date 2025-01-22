@@ -20,10 +20,10 @@ const Contact = () => {
         'service_a3a16rs',
         'template_6x8vumk',
         {
-          from_name: form.name,
-          to_name: 'Jonatan',
+          from_name: form.name + ' (From: ThreeJS 3D Portfolio)',
+          to_name: 'Jonatandb',
           from_email: form.email,
-          to_email: 'jonatandb@gmail',
+          to_email: 'jonatandb@gmail.com',
           message: form.message,
         },
         'inLQYkCaAWoFLWU9m',
