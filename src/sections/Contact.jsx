@@ -19,62 +19,48 @@ const Contact = () => {
       ...prev,
       [name]: value
     }));
-    // Clear any previous error messages
     setError('');
     setSuccess(false);
-  };
-
-  const validateForm = () => {
-    if (!form.name.trim()) {
-      setError('Nama harus diisi');
-      return false;
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(form.email)) {
-      setError('Format email tidak valid');
-      return false;
-    }
-    
-    if (form.message.trim().length < 10) {
-      setError('Pesan minimal 10 karakter');
-      return false;
-    }
-    
-    return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!validateForm()) return;
-
     setLoading(true);
     setError('');
-    setSuccess(false);
+
+    // Cek apakah semua field terisi
+    if (!form.name || !form.email || !form.message) {
+      setError('Semua field harus diisi');
+      setLoading(false);
+      return;
+    }
+
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      message: form.message,
+      current_date: new Date().toLocaleString() // Tambahkan ini jika ingin timestamp
+  };
 
     try {
-      await emailjs.send(
-        'service_2gfv57d', // Service ID
-        'template_n44fqg7', // Template ID
-        {
-          from_name: `${form.name} - Portfolio Contact`,
-          to_name: 'Alvan',
-          from_email: form.email,
-          to_email: 'hellb2254@gmail.com',
-          message: form.message,
-          reply_to: form.email, // Add reply-to field for better email threading
-        },
-        'UCKKih5IQspVduNdt' // Public Key
+      const result = await emailjs.send(
+        'service_2gfv57d',     // Service ID dari EmailJS
+        'template_n44fqg7',    // Template ID dari EmailJS
+        templateParams,        // Parameter sesuai template baru
+        'UCKKih5IQspVduNdt'   // Public Key dari EmailJS
       );
 
-      setSuccess(true);
-      setForm({ name: '', email: '', message: '' });
-      
+      if (result.status === 200) {
+        setSuccess(true);
+        setForm({ name: '', email: '', message: '' });
+        alert('Pesan berhasil terkirim!');
+      }
+
     } catch (error) {
       console.error('EmailJS Error:', error);
-      setError('Gagal mengirim pesan. Silakan coba lagi nanti.');
-      
+      setError(
+        error.text || 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.'
+      );
     } finally {
       setLoading(false);
     }
@@ -90,12 +76,8 @@ const Contact = () => {
         />
         
         <div className="contact-container relative z-10 bg-black/80 p-8 rounded-lg backdrop-blur-sm max-w-2xl w-full mx-4">
-          <h3 className="head-text text-3xl font-bold mb-4">Mari Berbincang</h3>
-          <p className="text-lg text-gray-300 mb-8">
-            Apakah Anda ingin membangun website baru, meningkatkan platform yang ada,
-            atau mewujudkan project unik, saya siap membantu Anda.
-          </p>
-
+          <h3 className="head-text text-3xl font-bold mb-4 text-white">Mari Berbincang</h3>
+          
           {error && (
             <div className="bg-red-500/20 border border-red-500 text-red-200 px-4 py-2 rounded mb-4">
               {error}
@@ -104,24 +86,20 @@ const Contact = () => {
 
           {success && (
             <div className="bg-green-500/20 border border-green-500 text-green-200 px-4 py-2 rounded mb-4">
-              Pesan berhasil terkirim! Kami akan menghubungi Anda secepatnya.
+              Pesan berhasil terkirim!
             </div>
           )}
 
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="flex flex-col space-y-6"
-          >
+          <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col space-y-6">
             <label className="block">
-              <span className="text-gray-200 mb-1 block">Nama Lengkap</span>
+              <span className="text-gray-200 mb-1 block">Nama</span>
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded focus:outline-none focus:border-blue-500 text-white"
-                placeholder="Masukkan nama lengkap"
+                placeholder="Masukkan nama Anda"
                 disabled={loading}
               />
             </label>
