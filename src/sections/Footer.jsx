@@ -8,7 +8,7 @@ const Footer = () => {
       </div>
 
       <div className='flex gap-3'>
-        <a href='https://github.com/jonatandb' target='_blank' rel='noreferrer'>
+        <a href='https://github.com/alfansatoruu' target='_blank' rel='noreferrer'>
           <div className='social-icon'>
             <img
               src='assets/github.svg'
@@ -17,7 +17,7 @@ const Footer = () => {
             />
           </div>
         </a>
-        <a
+        {/* <a
           href='https://twitter.com/jonatandb'
           target='_blank'
           rel='noreferrer'
@@ -29,8 +29,8 @@ const Footer = () => {
               className='w-1/2 h-1/2'
             />
           </div>
-        </a>
-        <a
+        </a> */}
+        {/* <a
           href='https://www.linkedin.com/in/jonatandb/'
           target='_blank'
           rel='noreferrer'
@@ -42,11 +42,11 @@ const Footer = () => {
               className='w-1/2 h-1/2'
             />
           </div>
-        </a>
+        </a> */}
       </div>
 
       <p className='text-white-500'>
-        &copy; 2024 - Jonatandb. All Rights Reserved
+        &copy; 2025 - Alvan. All Rights Reserved
       </p>
     </footer>
   )

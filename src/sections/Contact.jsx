@@ -17,16 +17,16 @@ const Contact = () => {
     setLoading(true)
     try {
       await emailjs.send(
-        'service_a3a16rs',
-        'template_6x8vumk',
+        'service_2gfv57d',
+        'template_n44fqg7',
         {
-          from_name: form.name + ' (From: ThreeJS 3D Portfolio)',
-          to_name: 'Jonatandb',
+          from_name: form.name + ' (From: Pesan Portfolio)',
+          to_name: 'Alvan',
           from_email: form.email,
-          to_email: 'jonatandb@gmail.com',
+          to_email: 'hellb2254@gmail.com',
           message: form.message,
         },
-        'inLQYkCaAWoFLWU9m',
+        'UCKKih5IQspVduNdt',
       )
       alert(
         "Your message has been sent. I'll get back to you as soon as possible.",
@@ -68,7 +68,7 @@ const Contact = () => {
                 value={form.name}
                 required
                 className='field-input'
-                placeholder='John Doe'
+                placeholder='Alvan'
                 onChange={handleChange}
               />
             </label>
@@ -81,7 +81,7 @@ const Contact = () => {
                 value={form.email}
                 required
                 className='field-input'
-                placeholder='JohnDoe@gmail.com'
+                placeholder='hellb2254@gmail.com'
                 onChange={handleChange}
               />
             </label>
@@ -100,7 +100,7 @@ const Contact = () => {
             </label>
 
             <button className='field-btn' type='submit' disabled={loading}>
-              {loading ? 'Sending...' : 'Send Message'}
+              {loading ? 'Mengirim...' : 'Kirim Pesan'}
 
               <img
                 src='assets/arrow-up.png'
