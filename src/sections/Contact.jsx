@@ -20,7 +20,7 @@ const Contact = () => {
         'service_2gfv57d',
         'template_n44fqg7',
         {
-          from_name: form.name + ' (From: Pesan Portfolio)',
+          from_name: form.name + ' Portfolio Satoru',
           to_name: 'Alvan',
           from_email: form.email,
           to_email: 'hellb2254@gmail.com',
