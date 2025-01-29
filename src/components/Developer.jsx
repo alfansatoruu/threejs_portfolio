@@ -1,45 +1,70 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useMemo } from 'react'
 import { useGraph } from '@react-three/fiber'
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
 
+// Pre-load all models and animations
+const MODEL_PATH = '/models/Developer.glb'
+const ANIMATIONS = {
+  idle: '/models/animations/idle.fbx',
+  salute: '/models/animations/salute.fbx',
+  clapping: '/models/animations/clapping.fbx',
+  victory: '/models/animations/victory.fbx'
+}
+
+// Preload the model and animations
+useGLTF.preload(MODEL_PATH)
+Object.values(ANIMATIONS).forEach(path => useFBX.preload(path))
+
 const Developer = ({ animationName = 'idle', ...props }) => {
   const group = useRef()
 
-  const { scene } = useGLTF('/models/Developer.glb')
-  const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
+  // Load the model
+  const { scene } = useGLTF(MODEL_PATH)
+  const clone = useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
 
-  const { animations: idleAnimation } = useFBX('/models/animations/idle.fbx')
-  const { animations: saluteAnimation } = useFBX(
-    '/models/animations/salute.fbx',
-  )
-  const { animations: clappingAnimation } = useFBX(
-    '/models/animations/clapping.fbx',
-  )
-  const { animations: victoryAnimation } = useFBX(
-    '/models/animations/victory.fbx',
-  )
+  // Load all animations once
+  const fbxData = useMemo(() => ({
+    idle: useFBX(ANIMATIONS.idle),
+    salute: useFBX(ANIMATIONS.salute),
+    clapping: useFBX(ANIMATIONS.clapping),
+    victory: useFBX(ANIMATIONS.victory)
+  }), [])
 
-  idleAnimation[0].name = 'idle'
-  saluteAnimation[0].name = 'salute'
-  clappingAnimation[0].name = 'clapping'
-  victoryAnimation[0].name = 'victory'
+  // Process animations
+  const animations = useMemo(() => {
+    return {
+      idle: Object.assign(fbxData.idle.animations[0].clone(), { name: 'idle' }),
+      salute: Object.assign(fbxData.salute.animations[0].clone(), { name: 'salute' }),
+      clapping: Object.assign(fbxData.clapping.animations[0].clone(), { name: 'clapping' }),
+      victory: Object.assign(fbxData.victory.animations[0].clone(), { name: 'victory' })
+    }
+  }, [fbxData])
 
-  const { actions } = useAnimations(
-    [
-      idleAnimation[0],
-      saluteAnimation[0],
-      clappingAnimation[0],
-      victoryAnimation[0],
-    ],
-    group,
-  )
+  // Setup animations
+  const { actions } = useAnimations(Object.values(animations), group)
 
+  // Handle animation changes
   useEffect(() => {
-    actions[animationName].reset().fadeIn(0.5).play()
-    return () => actions[animationName].fadeOut(0.5)
-  }, [animationName])
+    if (!actions) return
+
+    const cleanup = () => {
+      Object.values(actions).forEach(action => {
+        if (action?.isRunning()) {
+          action.fadeOut(0.5)
+        }
+      })
+    }
+
+    cleanup()
+
+    if (actions[animationName]) {
+      actions[animationName].reset().fadeIn(0.5).play()
+    }
+
+    return cleanup
+  }, [actions, animationName])
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -75,7 +100,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
         skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
       />
       <skinnedMesh
-        name='EyeLeft'
+        name="EyeLeft"
         geometry={nodes.EyeLeft.geometry}
         material={materials.Wolf3D_Eye}
         skeleton={nodes.EyeLeft.skeleton}
@@ -83,7 +108,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
         morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
       />
       <skinnedMesh
-        name='EyeRight'
+        name="EyeRight"
         geometry={nodes.EyeRight.geometry}
         material={materials.Wolf3D_Eye}
         skeleton={nodes.EyeRight.skeleton}
@@ -91,7 +116,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
         morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
       />
       <skinnedMesh
-        name='Wolf3D_Head'
+        name="Wolf3D_Head"
         geometry={nodes.Wolf3D_Head.geometry}
         material={materials.Wolf3D_Skin}
         skeleton={nodes.Wolf3D_Head.skeleton}
@@ -99,7 +124,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
         morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
       />
       <skinnedMesh
-        name='Wolf3D_Teeth'
+        name="Wolf3D_Teeth"
         geometry={nodes.Wolf3D_Teeth.geometry}
         material={materials.Wolf3D_Teeth}
         skeleton={nodes.Wolf3D_Teeth.skeleton}
@@ -110,7 +135,4 @@ const Developer = ({ animationName = 'idle', ...props }) => {
   )
 }
 
-useGLTF.preload('/models/Developer.glb')
-
 export default Developer
-

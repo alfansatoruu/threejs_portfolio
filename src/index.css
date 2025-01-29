@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #010103;
+  background: #151414;
   font-family: 'General Sans', sans-serif;
   user-select: none;
 }
@@ -151,6 +151,25 @@ body {
     @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-black-200;
   }
 }
+.canvas-loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f1f1f1;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .waving-hand {
   animation-name: wave-animation;
@@ -165,7 +184,7 @@ body {
     to right,
     rgba(255, 255, 255, 0.1) 10%,
     rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.000025) 50%,
+    rgba(160, 153, 153, 0) 50%,
     rgba(255, 255, 255, 0.025) 100%
   );
 }
