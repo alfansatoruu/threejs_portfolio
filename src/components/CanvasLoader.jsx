@@ -19,7 +19,7 @@ const CanvasLoader = () => {
         style={{
           width: 40,
           height: 40,
-          border: '5px solid black',
+          border: '5px solid white',
           borderTop: '5px solid transparent',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite',
@@ -28,7 +28,8 @@ const CanvasLoader = () => {
       <p
         style={{
           fontSize: 14,
-          color: '#000',
+          // Langsung ganti nilai color menjadi '#fff' atau 'white'
+          color: '#fff',
           fontWeight: 800,
           marginTop: 40,
         }}
