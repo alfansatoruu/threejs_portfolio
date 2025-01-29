@@ -232,11 +232,11 @@ export const workExperiences = [
   },
   {
     id: 3,
-    name: 'JavaScript',
+    name: 'React',
     pos: 'Junior Web Developer',
     duration: '2019 - 2020',
-    title: "Saya menggunakan Node.js untuk membangun aplikasi backend berbasis JavaScript. Saya mengembangkan API, mengelola basis data, dan meningkatkan performa aplikasi web.",
-    icon: '/assets/react.svg',
+    title: "Saya merancang dan mengembangkan aplikasi web menggunakan HTML, CSS, dan JavaScript. Bertanggung jawab dalam implementasi fitur baru, optimasi performa, dan memastikan responsivitas website di berbagai perangkat.",
+    icon: '/assets/web-dev.svg', // Pastikan ganti icon yang sesuai
     animation: 'salute',
-  },
+}
 ];
