@@ -211,33 +211,32 @@ export const clientReviews = [
       'Jonatandb was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
   },
 ];
-
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
+    name: 'Flutter',
+    pos: 'Beginner',
     duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: '/assets/framer.svg',
+    title: "Saya mulai belajar Flutter untuk membangun aplikasi mobile dan web. Saya mengeksplorasi berbagai fitur untuk membuat antarmuka pengguna yang responsif dan interaktif.",
+    icon: '/assets/flutter-logo.png',
     animation: 'victory',
   },
   {
     id: 2,
     name: 'Figma',
-    pos: 'Web Developer',
+    pos: 'Beginner',
     duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
+    title: "Saya menggunakan Figma untuk belajar desain UI/UX. Saya mulai memahami penyusunan layout, penggunaan komponen, dan berkolaborasi secara real-time dalam tim.",
     icon: '/assets/figma.svg',
     animation: 'clapping',
   },
   {
     id: 3,
-    name: 'Notion',
+    name: 'JavaScript',
     pos: 'Junior Web Developer',
     duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: '/assets/notion.svg',
+    title: "Saya menggunakan Node.js untuk membangun aplikasi backend berbasis JavaScript. Saya mengembangkan API, mengelola basis data, dan meningkatkan performa aplikasi web.",
+    icon: '/assets/react.svg',
     animation: 'salute',
   },
 ];
