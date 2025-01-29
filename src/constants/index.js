@@ -236,7 +236,7 @@ export const workExperiences = [
     pos: 'Junior Web Developer',
     duration: '2019 - 2020',
     title: "Saya merancang dan mengembangkan aplikasi web menggunakan HTML, CSS, dan JavaScript. Bertanggung jawab dalam implementasi fitur baru, optimasi performa, dan memastikan responsivitas website di berbagai perangkat.",
-    icon: '/assets/web-dev.svg', // Pastikan ganti icon yang sesuai
+    icon: '/assets/react.svg',
     animation: 'salute',
-}
+  }
 ];
