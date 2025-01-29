@@ -14,17 +14,35 @@ const CanvasLoader = () => {
         flexDirection: 'column',
       }}
     >
-      <span className='canvas-loader'></span>
+      <span
+        className='canvas-loader'
+        style={{
+          width: 40,
+          height: 40,
+          border: '5px solid black',
+          borderTop: '5px solid transparent',
+          borderRadius: '50%',
+          animation: 'spin 1s linear infinite',
+        }}
+      ></span>
       <p
         style={{
           fontSize: 14,
-          color: '#f1f1f1',
+          color: '#000',
           fontWeight: 800,
           marginTop: 40,
         }}
       >
         {progress !== 0 ? `${progress.toFixed(2)}%` : `Loading...`}
       </p>
+      <style>
+        {`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}
+      </style>
     </Html>
   )
 }
