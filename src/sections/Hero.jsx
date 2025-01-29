@@ -53,28 +53,41 @@ const Hero = () => {
   //     max: 10,
   //   },
   // })
-
   const isSmall = useMediaQuery({ maxWidth: 440 })
   const isMobile = useMediaQuery({ maxWidth: 768 })
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 })
+  const isLaptop = useMediaQuery({ minWidth: 1024, maxWidth: 1440 })
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet)
-
   return (
-    <section className='min-h-screen w-full flex flex-col relative' id='home'>
-      <div className="background">
-        <img src="/assets/pertama.png" alt="" />
+    <section className='relative min-h-screen w-full flex flex-col'>
+      {/* Background with responsive sizing */}
+      <div className="background absolute inset-0 z-0">
+        <img 
+          src="/assets/pertama.png" 
+          alt="background" 
+          className="w-full h-full object-cover"
+        />
       </div>
-      <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3'>
-        <p className='sm:text-3xl text-xl font-medium text-white text-center font-generalsans'>
+
+      {/* Header text with responsive margins and font sizes */}
+      <div className='relative z-10 w-full mx-auto flex flex-col gap-3
+        mt-20 sm:mt-28 md:mt-32 lg:mt-36'>
+        <p className='text-center font-generalsans text-white
+          text-xl sm:text-2xl md:text-3xl font-medium'>
           Hi, I&apos;m Alvan <span className='waving-hand'>👋🏻</span>
         </p>
       </div>
-      <div className='w-full h-full absolute inset-0'>
-        {/* <Leva /> */}
+
+      {/* 3D Canvas with responsive positioning */}
+      <div className='absolute inset-0 w-full h-full
+        sm:h-[calc(100%-100px)] md:h-[calc(100%-120px)]'>
         <Canvas className='w-full h-full'>
           <Suspense fallback={<CanvasLoader />}>
-            <PerspectiveCamera makeDefault position={[0, 0, 20]} />
+            <PerspectiveCamera 
+              makeDefault 
+              position={[0, 0, isSmall ? 25 : isMobile ? 22 : 20]} 
+            />
 
             <HeroCamera isMobile={isMobile}>
               <HackerRoom
@@ -87,21 +100,25 @@ const Hero = () => {
             <group>
               <Target position={sizes.targetPosition} />
               <ReactLogo position={sizes.reactLogoPosition} />
-              {/* <Cube position={sizes.cubePosition} />
-              <Rings position={sizes.ringPosition} /> */}
             </group>
-            <ambientLight intensity={1} />
-            <directionalLight position={[3, 3, 3]} intensity={0.5} />
+
+            <ambientLight intensity={isMobile ? 1.2 : 1} />
+            <directionalLight 
+              position={[3, 3, 3]} 
+              intensity={isMobile ? 0.6 : 0.5} 
+            />
           </Suspense>
         </Canvas>
       </div>
 
-      <div className='absolute bottom-7 left-0 right-0 w-full z-10 c-space'>
-        <a href='#contact' className='w-fit'>
+      {/* Button with responsive positioning and width */}
+      <div className='absolute z-10 bottom-7 left-0 right-0 
+        px-4 sm:px-0 w-full flex justify-center'>
+        <a href='#contact' className='w-full sm:w-auto'>
           <Button
             name="Let's work together"
             isBeam
-            containerClass='sm:w-fit w-full sm:min-w-96'
+            containerClass='w-full sm:w-auto sm:min-w-[384px] md:min-w-96'
           />
         </a>
       </div>
