@@ -1,0 +1,50 @@
+.background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden; /* Pastikan gambar tidak keluar dari radius */
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Untuk tampilan Mobile */
+@media (max-width: 768px) {
+    .background img {
+        content: url('/assets/kedua.jpeg'); /* Ganti dengan gambar khusus mobile */
+        object-position: top center; /* Sesuaikan fokus */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Fokus ke bagian atas */
+    }
+}
+
+/* Untuk tampilan Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .background img {
+        content: url('/assets/kedua.jpeg'); /* Ganti dengan gambar khusus mobile */
+        object-position: top center; /* Sesuaikan fokus */
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* Untuk layar besar (Desktop) */
+@media (min-width: 1024px) {
+    .background img {
+        content: url('/assets/kedua.jpeg'); /* Ganti dengan gambar khusus mobile */
+        object-position: top center; /* Sesuaikan fokus */
+        object-fit: cover;
+        object-position: center;
+    }
+}

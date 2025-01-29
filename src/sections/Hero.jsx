@@ -12,6 +12,8 @@ import ReactLogo from '../components/ReactLogo'
 import HeroCamera from '../components/HeroCamera'
 import Button from '../components/Button'
 // import { Leva, useControls } from 'leva'
+import './kumpulan-data-email.css';
+
 
 const Hero = () => {
   // const controls = useControls('HackerRoom', {
@@ -60,6 +62,9 @@ const Hero = () => {
 
   return (
     <section className='min-h-screen w-full flex flex-col relative' id='home'>
+      <div className="background">
+        <img src="/assets/pertama.png" alt="" />
+      </div>
       <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3'>
         <p className='sm:text-3xl text-xl font-medium text-black text-center font-generalsans'>
           Hi, I&apos;m Alvan <span className='waving-hand'>👋🏻</span>

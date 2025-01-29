@@ -9,9 +9,16 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #ffffff, #82c3d2c5);
+  background: linear-gradient(to bottom, #ffffff, #383636);
   font-family: 'General Sans', sans-serif;
   user-select: none;
+}
+
+@media (max-width: 768px) {
+  .background {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 
