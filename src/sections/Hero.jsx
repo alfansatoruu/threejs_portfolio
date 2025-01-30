@@ -16,43 +16,6 @@ import './kumpulan-data-email.css';
 
 
 const Hero = () => {
-  // const controls = useControls('HackerRoom', {
-  //   scale: {
-  //     value: 1,
-  //     min: 0,
-  //     max: 10,
-  //   },
-  //   rotationX: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationY: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationZ: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionX: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionY: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionZ: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  // })
   const isSmall = useMediaQuery({ maxWidth: 440 })
   const isMobile = useMediaQuery({ maxWidth: 768 })
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 })
@@ -73,7 +36,7 @@ const Hero = () => {
       {/* Header text with responsive margins and font sizes */}
       <div className='relative z-10 w-full mx-auto flex flex-col gap-3
         mt-20 sm:mt-28 md:mt-32 lg:mt-36'>
-        <p className='text-center font-generalsans text-white
+        <p className='text-center font-generalsans text-black
           text-xl sm:text-2xl md:text-3xl font-medium'>
           Hi, I&apos;m Alvan <span className='waving-hand'>👋🏻</span>
         </p>
