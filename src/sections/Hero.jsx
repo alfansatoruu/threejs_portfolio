@@ -27,7 +27,7 @@ const Hero = () => {
       {/* Background with responsive sizing */}
       <div className="background absolute inset-0 z-0">
         <img
-          src="/assets/liquid.png"
+          src="/assets/liquid-desktop.png"
           alt="background"
           className="w-full h-full object-cover"
         />

@@ -3,7 +3,7 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: -3;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     overflow: hidden;
@@ -15,9 +15,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(45deg, #78b2d5, #ffffff, #a0d0f0, #b8e1ff);
-    background-size: 400% 400%;
+    background-size: 100% 100%;
     animation: gradientFlow 12s ease infinite;
-    z-index: 1;
+    z-index: -3;
 }
 
 /* Shine Effect Layer */
@@ -35,7 +35,7 @@
     animation: shine 6s infinite;
     transform: rotate(45deg);
     mix-blend-mode: soft-light;
-    z-index: 2;
+    z-index: -2;
 }
 
 /* Image Layer */
@@ -44,7 +44,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 3;
+    z-index: -1;
     /* Pastikan gambar di layer teratas */
 }
 
