@@ -20,7 +20,7 @@
 /* Untuk tampilan Mobile */
 @media (max-width: 768px) {
     .background img {
-        content: url('/assets/bg-pertama.jpg'); /* Ganti dengan gambar khusus mobile */
+        content: url('/assets/liquid.png'); /* Ganti dengan gambar khusus mobile */
         object-position: top center; /* Sesuaikan fokus */
         width: 100%;
         height: 100%;
