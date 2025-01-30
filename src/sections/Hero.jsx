@@ -25,9 +25,12 @@ const Hero = () => {
   return (
     <section className='relative min-h-screen w-full flex flex-col'>
       {/* Background with responsive sizing */}
-      <div className="container">
-        <div className="background">
-        </div>
+      <div className="background absolute inset-0 z-0">
+        <img
+          src="/assets/liquid.png"
+          alt="background"
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Header text with responsive margins and font sizes */}
