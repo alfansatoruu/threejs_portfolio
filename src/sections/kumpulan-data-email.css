@@ -1,52 +1,97 @@
-.background {
-    background: linear-gradient(to bottom, #ffffff, #78b2d5);
+.container {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url("/assets/liquid.png");
+
+  }
+
+  .background {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: -10;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    overflow: hidden; /* Pastikan gambar tidak keluar dari radius */
-}
+    overflow: hidden;
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
+  }
 
-.background img {
-    
+  .background::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 75%
+    );
+    animation: shine 6s infinite;
+    transform: rotate(45deg);
+    mix-blend-mode: soft-light;
+  }
+
+  .background img {
+    z-index: 1000;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-}
+  }
 
-
-/* Untuk tampilan Mobile */
-@media (max-width: 768px) {
-    .background img {
-        content: url('/assets/liquid.png'); /* Ganti dengan gambar khusus mobile */
-        object-position: top center; /* Sesuaikan fokus */
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* Fokus ke bagian atas */
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
     }
-}
-
-/* Untuk tampilan Tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .background img {
-        content: url('/assets/kedua.jpeg'); /* Ganti dengan gambar khusus mobile */
-        object-position: top center; /* Sesuaikan fokus */
-        object-fit: cover;
-        object-position: center;
+    50% {
+      background-position: 100% 50%;
     }
-}
-
-/* Untuk layar besar (Desktop) */
-@media (min-width: 1024px) {
-    .background img {
-        content: url('/assets/kedua.jpeg'); /* Ganti dengan gambar khusus mobile */
-        object-position: top center; /* Sesuaikan fokus */
-        object-fit: cover;
-        object-position: center;
+    100% {
+      background-position: 0% 50%;
     }
-}
+  }
+
+  @keyframes shine {
+    0% {
+      transform: rotate(45deg) translateX(-100%);
+    }
+    100% {
+      transform: rotate(45deg) translateX(100%);
+    }
+  }
+
+  /* Untuk tampilan Mobile */
+  @media (max-width: 768px) {
+    .background img {
+      content: url('/assets/liquid.png');
+      object-position: top center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* Untuk tampilan Tablet */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .background img {
+      content: url('/assets/kedua.jpeg');
+      object-position: top center;
+      object-fit: cover;
+    }
+  }
+
+  /* Untuk layar besar (Desktop) */
+  @media (min-width: 1024px) {
+    .background img {
+      content: url('/assets/kedua.jpeg');
+      object-position: top center;
+      object-fit: cover;
+    }
+  }
+
+  /* Tambahan untuk konten */

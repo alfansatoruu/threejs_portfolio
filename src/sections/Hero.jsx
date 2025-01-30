@@ -25,12 +25,9 @@ const Hero = () => {
   return (
     <section className='relative min-h-screen w-full flex flex-col'>
       {/* Background with responsive sizing */}
-      <div className="background absolute inset-0 z-0">
-        <img 
-          src="/assets/liquid.png" 
-          alt="background" 
-          className="w-full h-full object-cover"
-        />
+      <div className="container">
+        <div className="background">
+        </div>
       </div>
 
       {/* Header text with responsive margins and font sizes */}
@@ -47,9 +44,9 @@ const Hero = () => {
         sm:h-[calc(100%-100px)] md:h-[calc(100%-120px)]'>
         <Canvas className='w-full h-full'>
           <Suspense fallback={<CanvasLoader />}>
-            <PerspectiveCamera 
-              makeDefault 
-              position={[0, 0, isSmall ? 25 : isMobile ? 22 : 20]} 
+            <PerspectiveCamera
+              makeDefault
+              position={[0, 0, isSmall ? 25 : isMobile ? 22 : 20]}
             />
 
             <HeroCamera isMobile={isMobile}>
@@ -66,9 +63,9 @@ const Hero = () => {
             </group>
 
             <ambientLight intensity={isMobile ? 1.2 : 1} />
-            <directionalLight 
-              position={[3, 3, 3]} 
-              intensity={isMobile ? 0.6 : 0.5} 
+            <directionalLight
+              position={[3, 3, 3]}
+              intensity={isMobile ? 0.6 : 0.5}
             />
           </Suspense>
         </Canvas>
